@@ -56,6 +56,6 @@ let slideIndex = 0;
         });
     });
 
-    function showInfo() {
-            alert('Saat ini tidak ada Navigasi!');
-    }
+document.getElementById("showInfo"). onclick = function () {
+    window.location.href = "land2.html";
+};
