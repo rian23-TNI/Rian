@@ -57,5 +57,5 @@ let slideIndex = 0;
     });
 
 document.getElementById("showInfo"). onclick = function () {
-    window.location.href = "index2.html";
+    window.location.href = "land2.html";
 };
