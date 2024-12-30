@@ -57,5 +57,5 @@ let slideIndex = 0;
     });
 
 document.getElementById("showInfo"). onclick = function () {
-    window.location.href = "https://rian23-tni.github.io/Info";
+    window.location.href = "https://rian23-tni.github.io/Info/";
 };
