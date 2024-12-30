@@ -56,6 +56,11 @@ let slideIndex = 0;
         });
     });
 
-document.getElementById("showInfo"). onclick = function () {
-    window.location.href = "https://rian23-tni.github.io/Info/";
-};
+function showInfo() {
+    // Mengarahkan ke tautan website
+    window.location.href = "https://rian23-tni.github.io/Info";
+    
+    // Atau membuka tautan di tab/jendela baru
+    // window.open("https://www.example.com", "_blank");
+}
+
