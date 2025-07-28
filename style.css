@@ -69,9 +69,6 @@ body {
     display: none;
     text-align: center;
     right: -33px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
     z-index: 100;
 }
