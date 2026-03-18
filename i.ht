@@ -1,129 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html><html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Profile ditutup sementara</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        img[alt="www.000webhost.com"] {
-            display: none;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animasi Mudik</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to top, #87ceeb, #e0f7ff);
+    }.road {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: #333;
 }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+.line {
+  position: absolute;
+  bottom: 55px;
+  width: 200%;
+  height: 10px;
+  background: repeating-linear-gradient(
+    to right,
+    white 0px,
+    white 40px,
+    transparent 40px,
+    transparent 80px
+  );
+  animation: moveRoad 2s linear infinite;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+@keyframes moveRoad {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
-        .pelanggan {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.car {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 60px;
+  background: red;
+  border-radius: 10px;
+}
 
-        .pelanggan img {
-            width: 50px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+.wheel {
+  position: absolute;
+  bottom: -15px;
+  width: 25px;
+  height: 25px;
+  background: black;
+  border-radius: 50%;
+  animation: spin 0.5s linear infinite;
+}
 
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+.wheel.left { left: 10px; }
+.wheel.right { right: 10px; }
 
-        button:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-        .last-payment {
-            font-style: italic;
-            color: #555;
-            margin-top: 5px;
-        }
+.sun {
+  position: absolute;
+  top: 50px;
+  right: 80px;
+  width: 60px;
+  height: 60px;
+  background: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 30px yellow;
+}
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
+.text {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  animation: fade 3s infinite alternate;
+}
 
-        .modal-content {
-            display: flex;
-            align-items: center;
-        }
+@keyframes fade {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
 
-        .close-btn {
-            cursor: pointer;
-        }
-
-        .close-btn:hover {
-            color: #555;
-        }
-
-        .total-debt-chart {
-            max-width: 100%;
-            margin-top: 20px;
-        }
-
-        footer {
-            background-color: aliceblue;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        footer.dark {
-            background-color: #333;
-            color: #fff;
-        }
-
-        footer ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        footer ul li {
-            margin-bottom: 10px;
-        }
-    </style>
+  </style>
 </head>
+<body>  <div class="text">Selamat Mudik 🚗💨 Hati-hati di Jalan! Saya tutup sedang Mudik</div>  <div class="sun"></div>  <div class="road">
+    <div class="line"></div>
+  </div>  <div class="car">
+    <div class="wheel left"></div>
+    <div class="wheel right"></div>
+  </div>  <script>
+    // Efek goyangan mobil biar terasa jalan
+    const car = document.querySelector('.car');
+    let up = true;
 
-<body>
-    <h1>Error,, 404'</h1>
-    <i>halaman ini di tutup sementara by.Rian project</i>
+    setInterval(() => {
+      car.style.transform = up
+        ? 'translate(-50%, -2px)'
+        : 'translate(-50%, 2px)';
+      up = !up;
+    }, 200);
+  </script></body>
 </html>
